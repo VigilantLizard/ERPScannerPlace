@@ -1,5 +1,5 @@
 -- Script by zonkerdoodle (@VigilantLizard).
--- Put this in Workspace.
+-- Put this in Workspace as a Script (server script).
 
 -- Scans around 50% faster when disabled, but doesn't list people who are in known ERP groups.
 local scanGroups = true
