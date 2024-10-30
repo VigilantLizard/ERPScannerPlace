@@ -8,7 +8,7 @@ To use the release, open Roblox Studio and...
 4. Edit your ERP Checker script in your Workspace and adjust your settings as needed.
 5. Move the AccountList ModuleScript into ReplicatedStorage.
 
-Send me any other known ERP groups or users on Twitter if:
+[DM me with any other known ERP groups or users on Twitter](https://x.com/VigilantLizard) if:
 - [My Roblox account](https://www.roblox.com/users/7506583559/profile) is not in the group.
 - [My Roblox account](https://www.roblox.com/users/7506583559/profile) does not follow the user.
 - They are not on the MFD ERP account list.
