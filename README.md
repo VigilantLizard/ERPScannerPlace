@@ -1,5 +1,5 @@
 # ERP Group Scanner Place
-Use this to update the MFD ERP list in AccountList in ReplicatedStorage: https://github.com/VigilantLizard/ERPListCleaner
+Use this to update the MFD ERP list in AccountList in ReplicatedStorage: https://github.com/VigilantLizard/ERPListParser
 
 ### To use the release, open Roblox Studio and...
 1. Import the RBXM into a blank Baseplate game.
