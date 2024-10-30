@@ -1,3 +1,5 @@
+-- Put this in ReplicatedStorage as a ModuleScript.
+
 local module = {
 	"342862084x",
 	"38373666x",
