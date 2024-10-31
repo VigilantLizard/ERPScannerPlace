@@ -1,11 +1,15 @@
 # ERP Group Scanner Place
 Use this to update the MFD ERP list in AccountList in ReplicatedStorage: https://github.com/VigilantLizard/ERPListParser
 
-### To use the release, open Roblox Studio and...
+### To use the release, open Roblox Studio and follow these steps:
 1. Open the place file (`ERPScanKit.rbxl`).
-2. Go to the Workspace and open the `ERP Scanner` Script.
-3. Change `scanGroups` and `targetGroupId` as you desire.
-4. Test the place and watch the console for results.
+2. Save it to Roblox. **Don't publish it.**
+3. Once you save it, go to File > Game Settings.
+4. In the window, go to Security, then Allow HTTP Requests.
+5. Go to the Workspace and open the `ERP Checker` Script.
+6. Change `scanGroups` and `targetGroupId` as you desire.
+7. Test the place and watch the console for results.
+#### You can skip steps 1-4 if you want to scan another group. Just stop the test, edit `ERP Checker` as desired, and test again.
 
 ## Other Notes
 Of course, this tool will take longer to scan groups depending on how manu members are in the group, so get some snacks while you're at it.
