@@ -1,7 +1,7 @@
 -- Script by zonkerdoodle (@VigilantLizard).
 -- Put this in Workspace as a Script (server script).
 
--- Scans around 50% faster when disabled, but doesn't list people who are in known ERP groups.
+-- true or false - Scans about 50% faster when false, but doesn't list people who are in known ERP groups.
 local scanGroups = true
 
 -- Replace with the group ID you want to check.
@@ -39,6 +39,7 @@ local targetGroupId = 34282593
 local targetUserId = 7506583559
 
 local HttpService = game:GetService("HttpService")
+local TestService = game:GetService("TestService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ERP_LIST = require(ReplicatedStorage.AccountList)
 
@@ -190,7 +191,7 @@ while nextPageCursor ~= nil do
 	getFollowing(targetUserId)
 end
 
-print("Scanning for unsafe accounts...\n \n~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~\n \n")
+TestService:Message("Scanning for unsafe accounts...\n \n~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~\n \n")
 
 for i, v in groupMembers do
 	workspace.SignPart.SurfaceGui.TextLabel.Text = "Scanning Member\n" .. i .. "/" .. #groupMembers
@@ -227,5 +228,5 @@ for i, v in groupMembers do
 	end
 end
 
-warn("\n \n~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~\n")
-warn("Finished scan.")
+TestService:Message("\n \n~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~\n \n ")
+TestService:Message("Finished scan.")
