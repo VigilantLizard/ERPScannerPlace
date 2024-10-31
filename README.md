@@ -1,5 +1,5 @@
 # ERP Group Scanner Place
-Use this to update the MFD ERP list in AccountList in ReplicatedStorage: https://github.com/VigilantLizard/ERPListParser
+This place now automatically updates the ERP account and group lists using [my database](https://github.com/VigilantLizard/ERPLists)!
 
 ### To use the release, open Roblox Studio and follow these steps:
 1. Open the place file (`ERPScanKit.rbxl`).
