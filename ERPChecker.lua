@@ -4,34 +4,18 @@
 -- Scans around 50% faster when disabled, but doesn't list people who are in known ERP groups.
 local scanGroups = true
 
--- Initialize with accounts that can't be followed by zonkerdoodle.
-local list = {
-	332864766 -- PawteoDerg
-}
-
--- Initialize with groups that can't be joined by zonkerdoodle.
-local groupList = {
-	34788732, -- Voreblox
-	34282593, -- Foxxos
-	34640640, -- Nomblox Revived
-	17106942, -- sign revolution
-	32317885, -- Derg's Paws
-	35063781, -- - Spades
-	35054382, -- bleach fan club group
-	35008055, -- Temple of the Black Goddess
-	34208803 -- It dont fard :(
-}
-
-local groupMembers = {}
-
-local nextPageCursor = nil
-local nextGroupCursor = nil
-
--- Zonkerdoodle account, used for indexing ERP groups and accounts.
-local targetUserId = 7506583559
-
 -- Replace with the group ID you want to check.
 local targetGroupId = 34282593
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -41,9 +25,38 @@ local targetGroupId = 34282593
 
 
 
+
+
+
+
+
+
+
+
+
+
+-- Zonkerdoodle account, used for indexing ERP groups and accounts.
+local targetUserId = 7506583559
+
 local HttpService = game:GetService("HttpService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ERP_LIST = require(ReplicatedStorage.AccountList)
+
+result = nil
+
+-- Initialize with accounts that can't be followed by zonkerdoodle.
+local result = game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/VigilantLizard/ERPLists/refs/heads/main/ZonkerdoodleList.bin")
+local list = result:split(",\n")
+
+-- Initialize with groups that can't be joined by zonkerdoodle.
+result = game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/VigilantLizard/ERPLists/refs/heads/main/GroupList.bin")
+--local list = result:split(",\n")
+local groupList = result:split(",\n")
+
+local groupMembers = {}
+
+local nextPageCursor = nil
+local nextGroupCursor = nil
 
 local function getGroupMembers(groupId)
 	local url = "https://groups.roproxy.com/v1/groups/" .. tostring(groupId) .. "/users?sortOrder=Asc&limit=100"
@@ -164,20 +177,20 @@ local function isInERP(userId)
 end
 
 getGroups(targetUserId)
-print(groupList)
+--print(groupList)
 
 getGroupMembers(targetGroupId)
 while nextGroupCursor ~= nil do
 	getGroupMembers(targetGroupId)
 end
-print(groupMembers)
+--print(groupMembers)
 
 getFollowing(targetUserId)
 while nextPageCursor ~= nil do
 	getFollowing(targetUserId)
 end
 
-print("Scanning for unsafe accounts...\n \n~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~\n")
+print("Scanning for unsafe accounts...\n \n~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~\n \n")
 
 for i, v in groupMembers do
 	workspace.SignPart.SurfaceGui.TextLabel.Text = "Scanning Member\n" .. i .. "/" .. #groupMembers
@@ -185,7 +198,6 @@ for i, v in groupMembers do
 	if isInGroup then
 		local uncensoredID = tostring(v)
 		local censoredID = uncensoredID:sub(1, -2) .. "x"
-		--print(censoredID)
 		ERP = table.find(ERP_LIST, censoredID)
 		local ERPGroup = false
 		if scanGroups then
